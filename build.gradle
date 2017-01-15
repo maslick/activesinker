@@ -1,0 +1,50 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+		jcenter()
+	}
+	dependencies {
+		classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:2.2.+'
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'provided-base'
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+
+jar {
+	baseName = 'ActiveSyncer'
+	version = '0.0.1-SNAPSHOT'
+}
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+	mavenCentral()
+	jcenter()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web-services')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+	// lombok
+	provided("org.projectlombok:lombok:1.16.12")
+
+	// retrofit
+	compile 'com.squareup.retrofit2:retrofit:2.1.0'
+	compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+}
+
+springBoot {
+	executable = true
+}

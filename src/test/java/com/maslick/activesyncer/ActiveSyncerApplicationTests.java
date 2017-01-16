@@ -22,10 +22,10 @@ public class ActiveSyncerApplicationTests {
 				.baseUrl("http://localhost:8080")
 				.addConverterFactory(GsonConverterFactory.create())
 				.build();
-		Haha uploader = retrofit.create(Haha.class);
+		DbRetrofitUploader uploader = retrofit.create(DbRetrofitUploader.class);
 
-		List<Datum> datas = new ArrayList<>();
-		Datum data = Datum.builder()
+		List<RawData> datas = new ArrayList<>();
+		RawData data = RawData.builder()
 				.alpha(1)
 				.beta(1)
 				.gamma(1)

@@ -5,12 +5,12 @@ import lombok.*;
 /**
  * Created by maslick on 15/01/17.
  */
-@AllArgsConstructor(staticName = "of")
+@AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Getter
 @Setter
-public class Datum {
+public class RawData {
     private long id;
     private float alpha;
     private float beta;
